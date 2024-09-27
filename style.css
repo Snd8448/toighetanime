@@ -1,0 +1,136 @@
+body {
+	background-color: rgb(50, 50, 50);
+}
+
+header {
+	text-align: center;
+}
+
+#Tieu_De {
+	color: whitesmoke;
+	font-size: 200%;
+	background-color: rgb(70, 70, 70);
+	padding: 30px;
+	margin-top: 0px;
+	margin-bottom: 50px;
+}
+
+#Contents {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+table {
+	background-color: rgb(60, 60, 60);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table, th, td {
+	border: 1px solid gray;
+	border-collapse: collapse;
+	color: whitesmoke;
+	padding: 5px;
+}
+
+tr:nth-child(odd) {
+	background-color: rgb(40, 40, 40);
+}
+
+.rank {
+	font-weight: bold;
+	font-size: 300%;
+	color: rgb(192, 192, 192);
+}
+
+.studio_image {
+	max-height: 60px;
+	max-width: 150px;
+	aspect-ratio: auto;
+	float: center;
+/*	width: 40%;*/
+}
+
+.item {
+	position: relative;
+	height: 100px;
+}
+
+.image {
+	width: 60px;
+	object-fit: cover;
+	aspect-ratio: auto;
+	float: left;
+	margin-left: 5px;
+}
+
+.anime_links {
+	text-decoration: none;
+	color: rgb(204, 204, 255);
+}
+
+.anime_links:hover, .anime_links:active {
+	text-decoration: underline;
+}
+
+.trailerButton {
+	text-decoration: none;
+	background-color: gray;
+	color: rgb(64, 64, 64);
+	position: absolute;	
+	bottom: 10px;
+	right: 10px;
+	float: right;
+}
+
+.descriptions {
+	color: lightgray;
+	float: left;
+	margin-left: 10px;
+	height: 88px;
+	width: 400px;
+}
+
+.detail p, h3 {
+	text-align: left;
+	margin: 0;
+	padding: 0;
+	padding-bottom: 5px;
+}
+
+.detail p {
+	font-size: 80%;
+	padding-left: 10px;
+}
+
+#overlay {
+	display: none;
+	position: fixed;
+	background-color: rgb(0, 0, 0, 0.9);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9;
+}
+
+#iframeContainer {
+	display: none;
+	z-index: 10;
+	width: 1000px;
+	height: 500px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin: -250px 0 0 -500px;
+}
+
+video {
+	background-color: black;
+	border: 3px white solid;
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	overflow: hidden;
+}
