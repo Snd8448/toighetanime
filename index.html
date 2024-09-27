@@ -1,296 +1,296 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../CSS/StyleAlimi.css">
-	<title>Alimi <3</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Alimi <3</title>
 </head>
 <body>
-	<div id="overlay" onclick="closeOverlay()"></div>
+    <div id="overlay" onclick="closeOverlay()"></div>
 
-	<header>
-		<h1 id="Tieu_De">Tổng hợp các bộ alime hay để xem cùng gia đình và người thân <3</h1>
-	</header>
-	
-	<p id='debug' style="color: white; font-size: 30px;"></p>
+    <header>
+        <h1 id="Tieu_De">Tổng hợp các bộ alime hay để xem cùng gia đình và người thân <3</h1>
+    </header>
+    
+    <p id='debug' style="color: white; font-size: 30px;"></p>
 
-	<div id="iframeContainer">			
-		<video src="" type="video/mp4" id="video" controls> </video>
-	</div>
+    <div id="iframeContainer">          
+        <video src="" type="video/mp4" id="video" controls> </video>
+    </div>
 
-	<div id="Contents">
-		
-		<input type="text" id="inp" onkeyup="findAnime()" placeholder="Tìm kiếm anime...">
-		<p id = "debug"></p>
-		<table id="lists" style="width:1000px">
-			<tr>
-				<th style="width:10%">Rank</th>
-				<th style="width:70%">Tên</th>
-				<th style="width:20%">Studio</th>
-			</tr>
+    <div id="Contents">
+        
+        <input type="text" id="inp" onkeyup="findAnime()" placeholder="Tìm kiếm anime...">
+        <p id = "debug"></p>
+        <table id="lists" style="width:1000px">
+            <tr>
+                <th style="width:10%">Rank</th>
+                <th style="width:70%">Tên</th>
+                <th style="width:20%">Studio</th>
+            </tr>
 
-			<tr>
-				<td class="rank">1</td>
+            <tr>
+                <td class="rank">1</td>
 
-				<!-- ANIME -->
-				<td class="item">
-					<a href="https://animevietsub.pub/phim/sousou-no-frieren-i2-a5073/" target="_blank">
-						<img class="image" src="../images/anims/sousou_no_frieren.jpg">
-					</a>
-					<div class="descriptions">
-						<div class="detail">
-							<a class="anime_links" href="https://animevietsub.pub/phim/sousou-no-frieren-i2-a5073/" target="_blank">
-								<h3>Sousou no Frieren: Beyond's Journey End</h3>
-							</a>
-							<p>- TV series (28 episodes)				</p>
-							<p>- Rating: 9.33 							</p>
-							<p>- Thể loại: Fantasy, Adventure, Drama	</p>
-						</div>
-					</div>
-					<button class="trailerButton"> Preview </button>
-				</td>
+                <!-- ANIME -->
+                <td class="item">
+                    <a href="https://animevietsub.pub/phim/sousou-no-frieren-i2-a5073/" target="_blank">
+                        <img class="image" src="images/anims/sousou_no_frieren.jpg">
+                    </a>
+                    <div class="descriptions">
+                        <div class="detail">
+                            <a class="anime_links" href="https://animevietsub.pub/phim/sousou-no-frieren-i2-a5073/" target="_blank">
+                                <h3>Sousou no Frieren: Beyond's Journey End</h3>
+                            </a>
+                            <p>- TV series (28 episodes)                </p>
+                            <p>- Rating: 9.33                           </p>
+                            <p>- Thể loại: Fantasy, Adventure, Drama    </p>
+                        </div>
+                    </div>
+                    <button class="trailerButton"> Preview </button>
+                </td>
 
-				<!-- STUDIO -->
-				<td class="studio">
-					<a class="studio_links" href="https://vi.wikipedia.org/wiki/Madhouse">
-						<img class="studio_image" src="../images/studios/Madhouse.jpg">
-					</a>
-				</td>
-			</tr>
+                <!-- STUDIO -->
+                <td class="studio">
+                    <a class="studio_links" href="https://vi.wikipedia.org/wiki/Madhouse">
+                        <img class="studio_image" src="images/studios/Madhouse.jpg">
+                    </a>
+                </td>
+            </tr>
 
-			<tr>
-				<td class="rank">2</td>
+            <tr>
+                <td class="rank">2</td>
 
-				<!-- ANIME -->
-				<td class="item">
-					<a class="anime_links" href="https://animevietsub.pub/phim/steins-gate-i4-a630/" target="_blank">
-						<img class="image" src="../images/anims/stein_gate.jpg">
-					</a>
-					<div class="descriptions">
-						<div class="detail">
-							<a class="anime_links" href="https://animevietsub.pub/phim/steins-gate-i4-a630/" target="_blank">
-								<h3>Stein;Gate</h3>
-							</a>
-							<p>- TV series (24 episodes)				</p>
-							<p>- Rating: 9.07 							</p>
-							<p>- Thể loại: Drama, Sci-Fi, Suspense		</p>
-						</div>
-					</div>
-					<button class="trailerButton"> Preview </button>
-				</td>
+                <!-- ANIME -->
+                <td class="item">
+                    <a class="anime_links" href="https://animevietsub.pub/phim/steins-gate-i4-a630/" target="_blank">
+                        <img class="image" src="images/anims/stein_gate.jpg">
+                    </a>
+                    <div class="descriptions">
+                        <div class="detail">
+                            <a class="anime_links" href="https://animevietsub.pub/phim/steins-gate-i4-a630/" target="_blank">
+                                <h3>Stein;Gate</h3>
+                            </a>
+                            <p>- TV series (24 episodes)                </p>
+                            <p>- Rating: 9.07                           </p>
+                            <p>- Thể loại: Drama, Sci-Fi, Suspense      </p>
+                        </div>
+                    </div>
+                    <button class="trailerButton"> Preview </button>
+                </td>
 
-				<!-- STUDIO -->
-				<td class="studio">
-					<a class="studio_links" href="https://vi.wikipedia.org/wiki/White_Fox">
-						<img class="studio_image" src="../images/studios/WhiteFox.jpg">
-					</a>
-				</td>
-			</tr>
-			
-			<tr>
-				<td class="rank">3</td>
+                <!-- STUDIO -->
+                <td class="studio">
+                    <a class="studio_links" href="https://vi.wikipedia.org/wiki/White_Fox">
+                        <img class="studio_image" src="images/studios/WhiteFox.jpg">
+                    </a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="rank">3</td>
 
-				<!-- ANIME -->
-				<td class="item">
-					<a class="anime_links" href="https://animevietsub.pub/phim/dai-chien-titan-i2-a20/" target="_blank">
-						<img class="image" src="../images/anims/attack_on_titan.jpg">
-					</a>
-					<div class="descriptions">
-						<div class="detail">
-							<a class="anime_links" href="https://animevietsub.pub/phim/dai-chien-titan-i2-a20/" target="_blank">
-								<h3>Shingeki no Kyojin Series</h3>
-							</a>
-							<p>- TV series (94 episodes)				</p>
-							<p>- Rating: 9.05 							</p>
-							<p>- Thể loại: Action, Fantasy, Horror		</p>
-						</div>
-					</div>
-					<button class="trailerButton"> Preview </button>
-				</td>
+                <!-- ANIME -->
+                <td class="item">
+                    <a class="anime_links" href="https://animevietsub.pub/phim/dai-chien-titan-i2-a20/" target="_blank">
+                        <img class="image" src="images/anims/attack_on_titan.jpg">
+                    </a>
+                    <div class="descriptions">
+                        <div class="detail">
+                            <a class="anime_links" href="https://animevietsub.pub/phim/dai-chien-titan-i2-a20/" target="_blank">
+                                <h3>Shingeki no Kyojin Series</h3>
+                            </a>
+                            <p>- TV series (94 episodes)                </p>
+                            <p>- Rating: 9.05                           </p>
+                            <p>- Thể loại: Action, Fantasy, Horror      </p>
+                        </div>
+                    </div>
+                    <button class="trailerButton"> Preview </button>
+                </td>
 
-				<!-- STUDIO -->
-				<td class="studio">
-					<a class="studio_links" href="https://vi.wikipedia.org/wiki/Wit_Studio">
-						<img class="studio_image" src="../images/studios/Wit.jpg">
-					</a>
+                <!-- STUDIO -->
+                <td class="studio">
+                    <a class="studio_links" href="https://vi.wikipedia.org/wiki/Wit_Studio">
+                        <img class="studio_image" src="images/studios/Wit.jpg">
+                    </a>
 
-					<a class="studio_links" href="https://vi.wikipedia.org/wiki/MAPPA">
-						<img class="studio_image" src="../images/studios/mappa.jpg">
-					</a>
-				</td>
-			</tr>
+                    <a class="studio_links" href="https://vi.wikipedia.org/wiki/MAPPA">
+                        <img class="studio_image" src="images/studios/mappa.jpg">
+                    </a>
+                </td>
+            </tr>
 
-			<tr>
-				<td class="rank">4</td>
+            <tr>
+                <td class="rank">4</td>
 
-				<!-- ANIME -->
-				<td class="item">
-					<a class="anime_links" href="https://animevietsub.pub/phim/violet-evergarden-a2882/" target="_blank">
-						<img class="image" src="../images/anims/violet_evergarden.jpg">
-					</a>
-					<div class="descriptions">
-						<div class="detail">
-							<a class="anime_links" href="https://animevietsub.pub/phim/violet-evergarden-a2882/" target="_blank">
-								<h3>Violet Evergarden: Auto Memories Doll</h3>
-							</a>
-							<p>- TV series (13 episodes)				</p>
-							<p>- Rating: 8.68 							</p>
-							<p>- Thể loại: Drama, Fantasy, Romance		</p>
-						</div>
-					</div>
-					<button class="trailerButton"> Preview </button>
-				</td>
+                <!-- ANIME -->
+                <td class="item">
+                    <a class="anime_links" href="https://animevietsub.pub/phim/violet-evergarden-a2882/" target="_blank">
+                        <img class="image" src="images/anims/violet_evergarden.jpg">
+                    </a>
+                    <div class="descriptions">
+                        <div class="detail">
+                            <a class="anime_links" href="https://animevietsub.pub/phim/violet-evergarden-a2882/" target="_blank">
+                                <h3>Violet Evergarden: Auto Memories Doll</h3>
+                            </a>
+                            <p>- TV series (13 episodes)                </p>
+                            <p>- Rating: 8.68                           </p>
+                            <p>- Thể loại: Drama, Fantasy, Romance      </p>
+                        </div>
+                    </div>
+                    <button class="trailerButton"> Preview </button>
+                </td>
 
-				<!-- STUDIO -->
-				<td class="studio">
-					<a class="studio_links" href="https://vi.wikipedia.org/wiki/Ky%C5%8Dto_Animation">
-						<img class="studio_image" src="../images/studios/KyotoAnimation.jpg">
-					</a>
-				</td>
-			</tr>
-			
-			<tr>
-				<td class="rank">5</td>
+                <!-- STUDIO -->
+                <td class="studio">
+                    <a class="studio_links" href="https://vi.wikipedia.org/wiki/Ky%C5%8Dto_Animation">
+                        <img class="studio_image" src="images/studios/KyotoAnimation.jpg">
+                    </a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="rank">5</td>
 
-				<!-- ANIME -->
-				<td class="item">
-					<a class="anime_links" href="https://animevietsub.pub/phim/fatestay-night-movie-heavens-feel-i-presage-flower-i1-a4200/" target="_blank">
-						<img class="image" src="../images/anims/heaven_feel.jpg">
-					</a>
-					<div class="descriptions">
-						<div class="detail">
-							<a class="anime_links" href="https://animevietsub.pub/phim/fatestay-night-movie-heavens-feel-i-presage-flower-i1-a4200/" target="_blank">
-								<h3>Fate/stay night Movies: Heaven's Feel </h3>
-							</a>
-							<p>- Movies (the third route)				</p>
-							<p>- Rating: 8.65 							</p>
-							<p>- Thể loại: Fantasy, Action, Supernatural</p>
-						</div>
-					</div>
-					<button class="trailerButton"> Preview </button>
-				</td>
+                <!-- ANIME -->
+                <td class="item">
+                    <a class="anime_links" href="https://animevietsub.pub/phim/fatestay-night-movie-heavens-feel-i-presage-flower-i1-a4200/" target="_blank">
+                        <img class="image" src="images/anims/heaven_feel.jpg">
+                    </a>
+                    <div class="descriptions">
+                        <div class="detail">
+                            <a class="anime_links" href="https://animevietsub.pub/phim/fatestay-night-movie-heavens-feel-i-presage-flower-i1-a4200/" target="_blank">
+                                <h3>Fate/stay night Movies: Heaven's Feel </h3>
+                            </a>
+                            <p>- Movies (the third route)               </p>
+                            <p>- Rating: 8.65                           </p>
+                            <p>- Thể loại: Fantasy, Action, Supernatural</p>
+                        </div>
+                    </div>
+                    <button class="trailerButton"> Preview </button>
+                </td>
 
-				<!-- STUDIO -->
-				<td class="studio">
-					<a class="studio_links" href="https://vi.wikipedia.org/wiki/Ufotable">
-						<img class="studio_image" src="../images/studios/ufotable.jpg">
-					</a>
-				</td>
-			</tr>
-			
-			<tr>
-				<td class="rank">6</td>
+                <!-- STUDIO -->
+                <td class="studio">
+                    <a class="studio_links" href="https://vi.wikipedia.org/wiki/Ufotable">
+                        <img class="studio_image" src="images/studios/ufotable.jpg">
+                    </a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="rank">6</td>
 
-				<!-- ANIME -->
-				<td class="item">
-					<a class="anime_links" href="https://animevietsub.pub/phim/fate-zero-i2-a875/" target="_blank">
-						<img class="image" src="../images/anims/fate_zero.jpg">
-					</a>
-					<div class="descriptions">
-						<div class="detail">
-							<a class="anime_links" href="https://animevietsub.pub/phim/fate-zero-i2-a875/" target="_blank">
-								<h3>Fate/Zero</h3>
-							</a>
-							<p>- TV Series (25 episodes)				</p>
-							<p>- Rating: 8.54 							</p>
-							<p>- Thể loại: Fantasy, Action, Supernatural</p>
-						</div>
-					</div>
-					<button class="trailerButton"> Preview </button>
-				</td>
+                <!-- ANIME -->
+                <td class="item">
+                    <a class="anime_links" href="https://animevietsub.pub/phim/fate-zero-i2-a875/" target="_blank">
+                        <img class="image" src="images/anims/fate_zero.jpg">
+                    </a>
+                    <div class="descriptions">
+                        <div class="detail">
+                            <a class="anime_links" href="https://animevietsub.pub/phim/fate-zero-i2-a875/" target="_blank">
+                                <h3>Fate/Zero</h3>
+                            </a>
+                            <p>- TV Series (25 episodes)                </p>
+                            <p>- Rating: 8.54                           </p>
+                            <p>- Thể loại: Fantasy, Action, Supernatural</p>
+                        </div>
+                    </div>
+                    <button class="trailerButton"> Preview </button>
+                </td>
 
-				<!-- STUDIO -->
-				<td class="studio">
-					<a class="studio_links" href="https://vi.wikipedia.org/wiki/Ufotable">
-						<img class="studio_image" src="../images/studios/ufotable.jpg">
-					</a>
-				</td>
-			</tr>
-		
-		</table>
+                <!-- STUDIO -->
+                <td class="studio">
+                    <a class="studio_links" href="https://vi.wikipedia.org/wiki/Ufotable">
+                        <img class="studio_image" src="images/studios/ufotable.jpg">
+                    </a>
+                </td>
+            </tr>
+        
+        </table>
 
-	</div>
+    </div>
 
-	<script>
-	let debug = document.getElementById('debug');
+    <script>
+    let debug = document.getElementById('debug');
 
-	function isNum(str) {
-		return (!isNaN(str) && str.length != 0);
-	}
+    function isNum(str) {
+        return (!isNaN(str) && str.length != 0);
+    }
 
-	function findAnime() {
-		var inp = document.getElementById("inp").value.toUpperCase();
-		var tr = document.getElementById("lists").getElementsByTagName("tr");
-		var cnt = 1;
-		if (isNum(inp)) {
-			for (var i = 1; i < tr.length; i++) {
-				var td = tr[i].getElementsByTagName("td")[0];
-				var color;
-				if (cnt % 2) {
-					color = "rgb(60, 60, 60)";
-				} else {
-					color = "rgb(40, 40, 40)";
-				}
-				if (td.innerHTML.indexOf(inp) != -1) {
-					tr[i].style.display = "";
-					tr[i].style.backgroundColor = color;
-					cnt++;
-				} else {
-					tr[i].style.backgroundColor = color;
-					tr[i].style.display = "none";
-				}
-			}
-			return;
-		}
+    function findAnime() {
+        var inp = document.getElementById("inp").value.toUpperCase();
+        var tr = document.getElementById("lists").getElementsByTagName("tr");
+        var cnt = 1;
+        if (isNum(inp)) {
+            for (var i = 1; i < tr.length; i++) {
+                var td = tr[i].getElementsByTagName("td")[0];
+                var color;
+                if (cnt % 2) {
+                    color = "rgb(60, 60, 60)";
+                } else {
+                    color = "rgb(40, 40, 40)";
+                }
+                if (td.innerHTML.indexOf(inp) != -1) {
+                    tr[i].style.display = "";
+                    tr[i].style.backgroundColor = color;
+                    cnt++;
+                } else {
+                    tr[i].style.backgroundColor = color;
+                    tr[i].style.display = "none";
+                }
+            }
+            return;
+        }
 
-		for (var i = 1; i < tr.length; i++) {
-			var td = tr[i].getElementsByTagName("h3")[0];
-			var color;
-			if (cnt % 2 == 1) {
-				color = "rgb(60, 60, 60)";
-			} else {
-				color = "rgb(40, 40, 40)";
-			}
-			if (td.innerHTML.toUpperCase().indexOf(inp) != -1) {
-				tr[i].style.display = "";
-				tr[i].style.backgroundColor = color;
-				cnt++;
-			} else {
-				tr[i].style.display = "none";
-				tr[i].style.backgroundColor = color;
-			}
-		}
-	}
+        for (var i = 1; i < tr.length; i++) {
+            var td = tr[i].getElementsByTagName("h3")[0];
+            var color;
+            if (cnt % 2 == 1) {
+                color = "rgb(60, 60, 60)";
+            } else {
+                color = "rgb(40, 40, 40)";
+            }
+            if (td.innerHTML.toUpperCase().indexOf(inp) != -1) {
+                tr[i].style.display = "";
+                tr[i].style.backgroundColor = color;
+                cnt++;
+            } else {
+                tr[i].style.display = "none";
+                tr[i].style.backgroundColor = color;
+            }
+        }
+    }
 
-	let videosSrc = [
-		"../videos/sousou_no_frieren.mp4",
-		"../videos/steins_gate.mp4",
-		"../videos/attack_on_titan.mp4",
-		"../videos/violet_evergarden.mp4",
-		"../videos/heaven_feel.mp4",
-		"../videos/fate_zero.mp4"
-	];
+    let videosSrc = [
+        "videos/sousou_no_frieren.mp4",
+        "videos/steins_gate.mp4",
+        "videos/attack_on_titan.mp4",
+        "videos/violet_evergarden.mp4",
+        "videos/heaven_feel.mp4",
+        "videos/fate_zero.mp4"
+    ];
 
-	function closeOverlay() {
-		document.getElementById('overlay').style.display = "none";
-		document.getElementById('iframeContainer').style.display = 'none';
-		document.getElementById('video').src = '';
-	}
+    function closeOverlay() {
+        document.getElementById('overlay').style.display = "none";
+        document.getElementById('iframeContainer').style.display = 'none';
+        document.getElementById('video').src = '';
+    }
 
-	var button = document.getElementsByClassName('trailerButton');
-	for (let i = 0; i < button.length; i++) {
-		let x = button[i];
-		x.addEventListener('click', function() {
-			let tr = x.closest('tr');
-			let rank = tr.getElementsByTagName('td')[0];
-			let video = document.getElementById('video');
-			document.getElementById('overlay').style.display = "block";
-			document.getElementById('iframeContainer').style.display = "block";
-			video.src = videosSrc[Number(rank.innerHTML)-1];
-		});
-	}
-	</script>
+    var button = document.getElementsByClassName('trailerButton');
+    for (let i = 0; i < button.length; i++) {
+        let x = button[i];
+        x.addEventListener('click', function() {
+            let tr = x.closest('tr');
+            let rank = tr.getElementsByTagName('td')[0];
+            let video = document.getElementById('video');
+            document.getElementById('overlay').style.display = "block";
+            document.getElementById('iframeContainer').style.display = "block";
+            video.src = videosSrc[Number(rank.innerHTML)-1];
+        });
+    }
+    </script>
 
 </body>
 </html>
