@@ -4,13 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Alimi <3</title>
 </head>
 <body>
     <div id="overlay" onclick="closeOverlay()"></div>
 
     <header>
-        <h1 id="Tieu_De">Tổng hợp các bộ alime hay để xem cùng gia đình và người thân <3</h1>
+        <h1 id="Tieu_De">Tổng hợp các bộ anime hay để xem cùng gia đình trong bữa cơm (hoặc là không)</h1>
     </header>
     
     <p id='debug' style="color: white; font-size: 30px;"></p>
@@ -20,11 +21,86 @@
     </div>
 
     <div id="Contents">
-        
-        <input type="text" id="inp" onkeyup="findAnime()" placeholder="Tìm kiếm anime...">
         <p id = "debug"></p>
+
+        <input type="text" id="inp" onkeyup="findAnime()" placeholder="Tìm kiếm anime...">
+
+        <button id="button" onclick="advance()">
+            <i class='fa fa-gear'></i>
+        </button>
+
+        <h3></h3>
+
+        <div id="advanceSearchContainer">
+            <button id="closeTab" onclick="closeTab()">X</button>
+            <fieldset id="advanceTab">
+                <legend>Thể loại</legend>
+                <form id="advanceSearch" onsubmit="return false">
+
+                <div class="searchItems">
+                    <label>
+                        <input type="checkbox" name="genre" id="action" value="1">
+                        Action
+                    </label>
+                </div>
+                
+                <div class="searchItems">
+                    <label>
+                        <input type="checkbox" name="genre" id="adventure" value="2">
+                        Adventure
+                    </label>    
+                </div>
+                <div class="searchItems">
+                    <label>
+                        <input type="checkbox" name="genre" id="drama" value="3">
+                        Drama
+                    </label>
+                </div>
+                <div class="searchItems">
+                    <label>
+                        <input type="checkbox" name="genre" id="fantasy" value="4">
+                        Fantasy
+                    </label>
+                </div>
+                <div class="searchItems">
+                    <label>
+                        <input type="checkbox" name="genre" id="horror" value="5">
+                        Horror
+                    </label>
+                </div>
+                <div class="searchItems">
+                    <label>
+                        <input type="checkbox" name="genre" id="romance" value="6">
+                        Romance
+                    </label>
+                </div>
+                <div class="searchItems">
+                    <label>
+                        <input type="checkbox" name="genre" id="sci-fi" value="7"> 
+                        Sci-fi
+                    </label>
+                </div>
+                <div class="searchItems">
+                    <label>
+                        <input type="checkbox" name="genre" id="supernatural" value="8">
+                        Supernatural
+                    </label>
+                </div>
+                <div class="searchItems">
+                    <label>
+                        <input type="checkbox" name="genre" id="suspense" value="9">
+                        Suspense
+                    </label>
+                </div>
+                <div id="submitContainer">
+                    <input type="button" name="submit" id="submitSearch" value="Xác nhận" onclick="submitForm()">
+                </div> 
+                </form>
+            </fieldset>
+        </div>
+
         <table id="lists" style="width:1000px">
-            <tr>
+            <tr>    
                 <th style="width:10%">Rank</th>
                 <th style="width:70%">Tên</th>
                 <th style="width:20%">Studio</th>
@@ -212,84 +288,149 @@
 
     </div>
 
+    <!-- SEARCHING BAR SCRIPT -->
     <script>
-    let debug = document.getElementById('debug');
+        let debug = document.getElementById('debug');
 
-    function isNum(str) {
-        return (!isNaN(str) && str.length != 0);
-    }
+        function isNum(str) {
+            return (!isNaN(str) && str.length != 0);
+        }
 
-    function findAnime() {
-        var inp = document.getElementById("inp").value.toUpperCase();
-        var tr = document.getElementById("lists").getElementsByTagName("tr");
-        var cnt = 1;
-        if (isNum(inp)) {
+        function findAnime() {
+            var inp = document.getElementById("inp").value.toUpperCase();
+            var tr = document.getElementsByTagName("tr");
+            var cnt = 1;
+            if (isNum(inp)) {
+                for (var i = 1; i < tr.length; i++) {
+                    var td = tr[i].getElementsByTagName("td")[0];
+                    var color;
+                    if (cnt % 2) {
+                        color = "rgb(60, 60, 60)";
+                    } else {
+                        color = "rgb(40, 40, 40)";
+                    }
+                    if (td.innerHTML.indexOf(inp) != -1) {
+                        tr[i].style.display = "";
+                        tr[i].style.backgroundColor = color;
+                        cnt++;
+                    } else {
+                        tr[i].style.backgroundColor = color;
+                        tr[i].style.display = "none";
+                    }
+                }
+                return;
+            }
+
             for (var i = 1; i < tr.length; i++) {
-                var td = tr[i].getElementsByTagName("td")[0];
+                var td = tr[i].getElementsByTagName("h3")[0];
                 var color;
-                if (cnt % 2) {
+                if (cnt % 2 == 1) {
                     color = "rgb(60, 60, 60)";
                 } else {
                     color = "rgb(40, 40, 40)";
                 }
-                if (td.innerHTML.indexOf(inp) != -1) {
+                if (td.innerHTML.toUpperCase().indexOf(inp) != -1) {
                     tr[i].style.display = "";
                     tr[i].style.backgroundColor = color;
                     cnt++;
                 } else {
-                    tr[i].style.backgroundColor = color;
                     tr[i].style.display = "none";
+                    tr[i].style.backgroundColor = color;
                 }
             }
-            return;
         }
 
-        for (var i = 1; i < tr.length; i++) {
-            var td = tr[i].getElementsByTagName("h3")[0];
-            var color;
-            if (cnt % 2 == 1) {
-                color = "rgb(60, 60, 60)";
-            } else {
-                color = "rgb(40, 40, 40)";
-            }
-            if (td.innerHTML.toUpperCase().indexOf(inp) != -1) {
-                tr[i].style.display = "";
-                tr[i].style.backgroundColor = color;
-                cnt++;
-            } else {
-                tr[i].style.display = "none";
-                tr[i].style.backgroundColor = color;
-            }
+        let videosSrc = [
+            "videos/sousou_no_frieren.mp4",
+            "videos/steins_gate.mp4",
+            "videos/attack_on_titan.mp4",
+            "videos/violet_evergarden.mp4",
+            "videos/heaven_feel.mp4",
+            "videos/fate_zero.mp4"
+        ];
+
+        function closeOverlay() {
+            document.getElementById('overlay').style.display = "none";
+            document.getElementById('iframeContainer').style.display = 'none';
+            document.getElementById('video').src = '';
         }
-    }
 
-    let videosSrc = [
-        "videos/sousou_no_frieren.mp4",
-        "videos/steins_gate.mp4",
-        "videos/attack_on_titan.mp4",
-        "videos/violet_evergarden.mp4",
-        "videos/heaven_feel.mp4",
-        "videos/fate_zero.mp4"
-    ];
+        var button = document.getElementsByClassName('trailerButton');
+        for (let i = 0; i < button.length; i++) {
+            let x = button[i];
+            x.addEventListener('click', function() {
+                let tr = x.closest('tr');
+                let rank = tr.getElementsByTagName('td')[0];
+                let video = document.getElementById('video');
+                document.getElementById('overlay').style.display = "block";
+                document.getElementById('iframeContainer').style.display = "block";
+                video.src = videosSrc[Number(rank.innerHTML)-1];
+            });
+        }
+    </script>
 
-    function closeOverlay() {
-        document.getElementById('overlay').style.display = "none";
-        document.getElementById('iframeContainer').style.display = 'none';
-        document.getElementById('video').src = '';
-    }
+    <!-- ADVANCE SEARCH SCRIPT -->
+    <script>
+        function advance() {
+            document.getElementById("advanceSearchContainer").style.display = "block";
+        }
+        function closeTab() {
+            let tab = document.getElementById("advanceSearchContainer")
+            tab.style.display = "none";
+            document.getElementById("advanceSearch").reset();
+        }
+        function submitForm() {
+            let debug = document.getElementById("debug");
+            let checkValues = document.getElementsByName("genre");
+            let values = [];
+            for (let i = 0; i < checkValues.length; i++) {
+                if (checkValues[i].checked) {
+                    let genreChecked = checkValues[i].id;
+                    values.push(genreChecked.toUpperCase());
+                }
+            }   
+            let tr = document.getElementsByTagName('tr');
+            let result = [];
+            for (let i = 1; i < tr.length; i++) {
+                let genreList = tr[i].getElementsByTagName('p')[2].innerHTML;
+                genreList = genreList.split("Thể loại:")[1].split(", ");
+                let ok = (values.length == 0 ? 1 : 0);
+                for (let j = 0; j < genreList.length; j++) {
+                    genreList[j] = genreList[j].trim().toUpperCase();
+                    for (let k = 0; k < values.length; k++) {
+                        // debug.innerHTML += values[k] + ' ' + genreList[j] + "<br>";
+                        if (values[k] == genreList[j]) {
+                            ok = 1;
+                            break;
+                        }
+                    }
+                    if (ok) break;
+                }
+                if (ok) result.push(i);
+            }
+            let i = 1, j = 0, cnt = 1;
+            while (i < tr.length) {
+                var color;
+                if (cnt % 2 == 1) {
+                    color = "rgb(60, 60, 60)";
+                } else {
+                    color = "rgb(40, 40, 40)";
+                }
+                if (i == result[j]) {
+                    tr[i].style.display = "";
+                    tr[i].style.backgroundColor = color;
+                    cnt++;
+                    j++;
+                } else {
+                    tr[i].style.display = "none";
+                }
+                i++;
+            }
+            // debug.innerHTML = result;
+            document.getElementById("advanceSearchContainer").style.display = "none";
+            document.getElementById("advanceSearch").reset();
+        }
 
-    var button = document.getElementsByClassName('trailerButton');
-    for (let i = 0; i < button.length; i++) {
-        let x = button[i];
-        x.addEventListener('click', function() {
-            let tr = x.closest('tr');
-            let rank = tr.getElementsByTagName('td')[0];
-            let video = document.getElementById('video');
-            document.getElementById('overlay').style.display = "block";
-            document.getElementById('iframeContainer').style.display = "block";
-            video.src = videosSrc[Number(rank.innerHTML)-1];
-        });
-    }
     </script>
 
 </body>
