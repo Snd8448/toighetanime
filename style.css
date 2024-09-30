@@ -77,7 +77,7 @@ tr:nth-child(odd) {
 .trailerButton {
 	text-decoration: none;
 	background-color: gray;
-	color: rgb(30, 30, 30);
+	color: rgb(0, 0, 0);
 	position: absolute;	
 	bottom: 10px;
 	right: 10px;
@@ -171,10 +171,10 @@ fieldset {
 	position: fixed;
 	background-color: rgb(240, 240, 240);
 	border: 1px solid gray;
-	width: 300px;
-	height: 300px;
+	width: 290px;
+	height: 230px;
 	top: 50%;
 	left: 50%;
-	margin: -150px 0 0 -150px;
+	margin: -115px 0 0 -145px;
 	z-index: 100;
 }
