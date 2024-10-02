@@ -1,0 +1,88 @@
+#test {
+	margin: 0;
+	padding: 0;
+}
+
+#gaytest p {
+	font-weight: bold;
+}
+
+#lik {
+	text-decoration: none;
+}
+
+select:invalid {
+	color: gray;
+}
+
+option {
+	color: black;
+}
+
+img {
+	border: 2px solid black;
+}
+
+#TĐ1 {
+	margin: 0;
+	padding: 0;
+}
+
+table, th, td {
+	border: 0px solid gray;
+	border-collapse: collapse;
+}
+
+td, th {
+	text-align: center;
+	padding: 5px;
+}
+
+tr {
+	border-bottom: 2px solid gray;
+}
+
+tr:nth-child(even) {
+	background-color: rgba(150, 212, 212, 0.4);
+}
+
+tr:hover {
+	background-color: rgb(192, 192, 192);
+}
+
+tr:nth-child(even):hover {
+	background-color: rgb(107, 167, 169);
+}
+
+caption {
+	font-weight: bold;
+	margin: 10px;
+}
+
+.items {
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+fieldset {
+	border-bottom: 0;
+	border-left: 0;
+	border-right: 0;
+	margin-top: 10px;
+}
+
+#closeTab {
+	margin: 5px;
+}
+
+#advanceSearchContainer {
+	display: none;
+	position: fixed;
+	background-color: rgb(240, 240, 240);
+	border: 1px solid gray;
+	width: 300px;
+	height: 300px;
+	top: 50%;
+	left: 50%;
+	margin: -150px 0 0 -150px;
+}

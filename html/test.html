@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>			
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../CSS/test.css">
+	<link rel="icon" type="image/x-icon" href="../images/viuo.ico">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>60p Học HTML, quá gà</title>
+</head>
+<body>
+	<input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search..">
+
+	<table id="lists">
+		<caption>Bảng giá gacha cho trẻ em</caption>
+		<tr class="ahh">
+			<th>Lands</th>
+			<th>Characters</th>
+			<th>Lượng đá đã ngốn</th>
+		</tr>
+		<tr class="ahh">
+			<td>Inazuma</td>
+			<td>Raiden Shogun</td>
+			<td>340</td>
+		</tr>
+		
+		<tr class="ahh">
+			<td>Mondstadt</td>
+			<td>Eula Lawrence</td>
+			<td>89</td>
+		</tr>
+	</table>
+
+
+	<button class="nut">Button A</button>
+	<button class="nut">Button B</button>
+	<script>
+	var debug = document.getElementById("debug");
+	function myFunction() {
+		var input, filter, ul, li, a, i;
+		input = document.getElementById("mySearch");
+		filter = input.value.toUpperCase();
+		ul = document.getElementById("lists");
+		li = ul.getElementsByClassName("ahh");
+		for (i = 1; i < li.length; i++) {
+			a = li[i].getElementsByTagName("td")[0];
+			if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+		  		li[i].style.display = "";
+			} else {
+				li[i].style.display = "none";
+	 		}
+		}
+	}
+
+	var button = document.getElementsByClassName("nut");
+	for (let i = 0; i < button.length; i++) {
+		var x = button[i];
+		x.addEventListener('click', function() {
+			debug.textContent = button[i].textContent;
+		});
+	}
+	</script>
+	<input type="button" onclick="alert('Hát cho giờ ra chơi, mà trời mưa rơi những ngày em không thấy nắng')" value = "Biết ông Hát không?">
+
+	<p id="demo"></p>
+
+	<p>Điền vào các thông tin dưới đây</p>
+	<form id="gaytest" action="index.html" target="_blank" method="post">
+		<fieldset style="width:450px;">
+		<legend style="color: gray; font-size:150%">Just a small test</legend>
+
+		<p>1. Họ tên của bạn là</p>
+		<label for="fname">Họ: </label> <br>
+		<input type="text" id="fname" placeholder="Họ của bạn" required>
+		<br>
+		<label for="lanme">Tên: </label> <br>
+		<input type="text" id="lname" placeholder="Tên của bạn" required> <br>
+
+		<br>
+		<label for="fav_char" style="font-weight:bold;">2. Chọn 1 nhân vật yêu thích:</label>
+		<select id="fav_char" name="fav_char" required>
+			<option value="" disabled selected hidden>Chọn 1 nhân vật</option>
+			<option value="astolfo">Astolfo</option>
+			<option value="felix">Felix Argyle</option>
+			<option value="hideri">Hideri Kanzaki</option>
+			<option value="saika">Saika Totsuka</option>
+			<option value="bridget">Bridget</option>
+			<option value="bridget">Raiden Ei</option>
+		</select>
+
+		<p>3. Bạn có gay không?</p>
+
+		<input type="radio" id="yes" name="gaycheck" required>
+		<label for="yes">Có</label> <br>
+
+		<input type="radio" id="abs_yes" name="gaycheck" required>
+		<label for="abs_yes">Chắc chắn là có</label>
+
+		<p>4. Bạn thích ăn những loại củ/trái cây nào sau đây</p>
+		<div required>
+			<input type="checkbox" name="fruit" id="banana">
+			<label for="banana">Chuối</label> <br>
+			<input type="checkbox" name="fruit" id="cucumber">
+			<label for="cucumber">Dưa leo</label> <br>
+			<input type="checkbox" name="fruit" id="carrot">
+			<label for="carrot">Cà rốt</label> <br>
+		</div>
+
+		<p>5. Bạn có gì muốn nói không</p>
+		<textarea name="message" rows=4 cols=30 placeholder="Nhập gì đó (hoặc không)"></textarea>
+
+		<br> <br>
+		<input type="submit" value="Xác nhận">
+		<input type="reset" value="Nhập lại thông tin">
+		</fieldset>
+	</form>
+
+	<img src="../images/viuo.jpg" style="width:30px; height:50px;">	
+
+	<br>
+
+	<button id="button" onclick="advance()">
+		<i class='fa fa-gear'></i>
+	</button>
+
+	<div id="advanceSearchContainer">
+		<button id="closeTab" onclick="closeTab()" style="background: none; border: none;">X</button>
+		<fieldset id="advanceTab">
+			<legend style="color: darkslategrey; font-size:140%; font-weight: bold;">Thể loại</legend>
+			<form id="advanceSearch" onsubmit="return false">
+
+			<div class="items">
+				<label>
+					<input type="checkbox" name="genre" id="action" value="1">
+					Action
+				</label>
+			</div>
+			<div class="items">
+				<label>
+					<input type="checkbox" name="genre" id="adventure" value="2">
+					Adventure
+				</label>	
+			</div>
+			<div class="items">
+				<label>
+					<input type="checkbox" name="genre" id="drama" value="3">
+					Drama
+				</label>
+			</div>
+			<div class="items">
+				<label>
+					<input type="checkbox" name="genre" id="fantasy" value="4">
+					Fantasy
+				</label>
+			</div>
+			<div class="items">
+				<label>
+					<input type="checkbox" name="genre" id="horror" value="5">
+					Horror
+				</label>
+			</div>
+			<div class="items">
+				<label>
+					<input type="checkbox" name="genre" id="romance" value="6">
+					Romance
+				</label>
+			</div>
+			<div class="items">
+				<label>
+					<input type="checkbox" name="genre" id="sci-fi" value="7"> 
+					Sci-fi
+				</label>
+			</div>
+			<div class="items">
+				<label>
+					<input type="checkbox" name="genre" id="supernatural" value="8">
+					Supernatural
+				</label>
+			</div>
+			<div class="items">
+				<label>
+					<input type="checkbox" name="genre" id="suspense" value="9">
+					Suspense
+				</label>
+			</div>
+			<div id="submitContainer">
+				<input type="button" name="submit" id="submitSearch" value="Xác nhận" onclick="submitForm()">
+			</div>
+			</form>
+		</fieldset>
+	</div>
+
+	<script type="text/javascript">
+		function advance() {
+			document.getElementById("advanceSearchContainer").style.display = "block";
+		}
+		function closeTab() {
+			let tab = document.getElementById("advanceSearchContainer")
+			tab.style.display = "none";
+			document.getElementById("advanceSearch").reset();
+		}
+		function submitForm() {
+			let genreID = [
+				"action",
+				"adventure",
+				"drama",
+				"fantasy",
+				"horror",
+				"romance",
+				"sci-fi",
+				"supernatural",
+				"suspense"
+			];
+
+			let checkValues = document.getElementsByName("genre");
+			let values = [];
+			for (let i = 0; i < checkValues.length; i++) {
+				if (checkValues[i].checked) {
+					values.push(genreID[Number(checkValues[i].value)-1]);
+				}
+			}
+			document.getElementById("debug").innerHTML = values;
+			document.getElementById("advanceSearchContainer").style.display = "none";
+			document.getElementById("advanceSearch").reset();
+		}
+
+	</script>
+	<p id="debug"></p>
+
+	</body>
+</html>
