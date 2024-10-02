@@ -11,9 +11,17 @@
 <body>
     <div id="overlay" onclick="closeOverlay()"></div>
 
-    <header>
-        <h1 id="Tieu_De">Tổng hợp các bộ anime hay để xem cùng gia đình trong bữa cơm (hoặc là không)</h1>
-    </header>
+    <div id="header">
+        <!-- <div id="main_menu" style="border-bottom: 5px solid green;"> -->
+            <a href="#" style="border-bottom: 5px solid green;">Trang Chủ</a>
+        <!-- </div> -->
+        <!-- <div id="test_1"> -->
+            <a href="html/about.html">Test 1</a>
+        <!-- </div> -->
+        <!-- <div id="test_2"> -->
+            <a href="html/dontclick.html">Test 2</a>
+        <!-- </div> -->
+    </div>
     
     <p id='debug' style="color: white; font-size: 30px;"></p>
 
@@ -362,7 +370,6 @@
                 for (let j = 0; j < genreList.length; j++) {
                     genreList[j] = genreList[j].trim().toUpperCase();
                     for (let k = 0; k < values.length; k++) {
-                        // debug.innerHTML += values[k] + ' ' + genreList[j] + "<br>";
                         if (values[k] == genreList[j]) {
                             ok = 1;
                             break;
@@ -385,7 +392,6 @@
                 }
                 i++;
             }
-            // debug.innerHTML = result;
             document.getElementById("advanceSearchContainer").style.display = "none";
             document.getElementById("advanceSearch").reset();
         }
