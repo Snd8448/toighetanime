@@ -53,8 +53,8 @@
             x -= 65;
             if (!keyDown[x]) {
                 keyDown[x] = 1;
-                let audio = new Audio();
-                audio.src = "../sounds/" + str + ".wav";
+                let sound = "../sounds/" + str + ".wav";
+                let audio = new Audio(sound);
                 audio.display = "block";
                 audio.play();
 
