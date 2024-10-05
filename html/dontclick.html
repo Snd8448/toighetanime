@@ -17,6 +17,8 @@
         <a href="#" style="border-bottom: 5px solid green;">Cung đàn của gió</a>
     </div>
     
+    <p id="debug"></p>
+
     <div id="lyreContainer">
     <button id="Q" class="" onmousedown="lyre('Q'.charCodeAt(0))" onmouseup="mouseUp('Q'.charCodeAt(0))">Q</button>
     <button id="W" class="" onmousedown="lyre('W'.charCodeAt(0))" onmouseup="mouseUp('W'.charCodeAt(0))">W</button>
@@ -43,17 +45,27 @@
     <button id="M" class="" onmousedown="lyre('M'.charCodeAt(0))" onmouseup="mouseUp('M'.charCodeAt(0))">M</button>
     </div>
     <script type="text/javascript">
-        // let debug = document.getElementById("debug");
+        let debug = document.getElementById("debug");
         let btns = document.getElementsByTagName('button');
         let keyDown = new Array(26);
         for (let i=0; i < 26; i++) keyDown[i] = 0;
+        let sounds = new Array(100);
+        for (let i=65; i<100; i++) {
+            for (let j=0; j < btns.length; j++) {
+                if (i == btns[j].id.charCodeAt(0)) {
+                    sounds[i-65] = "../sounds/" + String.fromCharCode(i + 32) + ".wav";
+                    // debug.innerHTML += i + sounds[i] + "<br>";
+                }
+            }
+        }
 
         function lyre(x) {
             let str = String.fromCharCode(x);
             x -= 65;
             if (!keyDown[x]) {
                 keyDown[x] = 1;
-                let sound = "sounds/" + str + ".wav";
+                let sound = sounds[x];
+                // debug.innerHTML = sound;
                 let audio = new Audio(sound);
                 audio.display = "block";
                 audio.play();
