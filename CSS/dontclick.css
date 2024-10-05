@@ -44,7 +44,7 @@ button {
 }
 
 #lyreContainer {
-	border: 1px solid red;
+/*	border: 1px solid red;*/
 	position: absolute;
 	width: 700px;
 	height: 300px;

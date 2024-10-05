@@ -49,14 +49,10 @@
         let btns = document.getElementsByTagName('button');
         let keyDown = new Array(26);
         for (let i=0; i < 26; i++) keyDown[i] = 0;
-        let sounds = new Array(100);
-        for (let i=65; i<100; i++) {
-            for (let j=0; j < btns.length; j++) {
-                if (i == btns[j].id.charCodeAt(0)) {
-                    sounds[i-65] = "../sounds/" + String.fromCharCode(i + 32) + ".wav";
-                    // debug.innerHTML += i + sounds[i] + "<br>";
-                }
-            }
+        let sounds = new Array(26);
+        for (let i=0; i < btns.length; i++) {
+            let char = btns[i].id.charCodeAt(0);
+            sounds[char - 65] = "../sounds/" + String.fromCharCode(char + 32) + ".wav";
         }
 
         function lyre(x) {
