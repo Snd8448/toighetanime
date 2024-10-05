@@ -86,3 +86,35 @@ fieldset {
 	left: 50%;
 	margin: -150px 0 0 -150px;
 }
+
+audio {
+/*	display: none;*/
+}
+
+button {
+	all: initial;
+	background-color: rgb(255, 255, 180);
+	height: 80px;
+	width: 80px;
+	border: 1px solid black;
+	margin-left: 13px;
+	border-radius: 100%;
+	text-align: center;
+	font-size: 200%;
+}
+
+.active {
+	background-color: rgb(200, 200, 105);
+}
+
+#lyreContainer {
+	width: 700px;
+	height: 300px;
+	top: 50%;
+	left: 50%;
+	margin: -150px 0 0 -350px;
+	position: absolute;
+	border: 1px solid red;
+	align-content: center;
+	overflow: auto;
+}

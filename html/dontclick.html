@@ -12,17 +12,89 @@
     <div id="overlay" onclick="closeOverlay()"></div>
 
     <div id="header">
-        <!-- <div id="main_menu" style="border-bottom: 5px solid green;"> -->
-            <a href="../index.html">Trang Chủ</a>
-        <!-- </div> -->
-        <!-- <div id="test_1"> -->
-            <a href="about.html">Test 1</a>
-        <!-- </div> -->
-        <!-- <div id="test_2"> -->
-            <a href="#" style="border-bottom: 5px solid green;">Test 2</a>
-        <!-- </div> -->
+        <a href="../index.html">Điện ảnh tuyệt đối</a>
+        <a href="about.html">Test 1</a>
+        <a href="#" style="border-bottom: 5px solid green;">Cung đàn của gió</a>
     </div>
     
+    <div id="lyreContainer">
+    <button id="Q" class="" onmousedown="lyre('Q'.charCodeAt(0))" onmouseup="mouseUp('Q'.charCodeAt(0))">Q</button>
+    <button id="W" class="" onmousedown="lyre('W'.charCodeAt(0))" onmouseup="mouseUp('W'.charCodeAt(0))">W</button>
+    <button id="E" class="" onmousedown="lyre('E'.charCodeAt(0))" onmouseup="mouseUp('E'.charCodeAt(0))">E</button>
+    <button id="R" class="" onmousedown="lyre('R'.charCodeAt(0))" onmouseup="mouseUp('R'.charCodeAt(0))">R</button>
+    <button id="T" class="" onmousedown="lyre('T'.charCodeAt(0))" onmouseup="mouseUp('T'.charCodeAt(0))">T</button>
+    <button id="Y" class="" onmousedown="lyre('Y'.charCodeAt(0))" onmouseup="mouseUp('Y'.charCodeAt(0))">Y</button>
+    <button id="U" class="" onmousedown="lyre('U'.charCodeAt(0))" onmouseup="mouseUp('U'.charCodeAt(0))">U</button> 
+    <br> <br>
+    <button id="A" class="" onmousedown="lyre('A'.charCodeAt(0))" onmouseup="mouseUp('A'.charCodeAt(0))">A</button>
+    <button id="S" class="" onmousedown="lyre('S'.charCodeAt(0))" onmouseup="mouseUp('S'.charCodeAt(0))">S</button>
+    <button id="D" class="" onmousedown="lyre('D'.charCodeAt(0))" onmouseup="mouseUp('D'.charCodeAt(0))">D</button>
+    <button id="F" class="" onmousedown="lyre('F'.charCodeAt(0))" onmouseup="mouseUp('F'.charCodeAt(0))">F</button>
+    <button id="G" class="" onmousedown="lyre('G'.charCodeAt(0))" onmouseup="mouseUp('G'.charCodeAt(0))">G</button>
+    <button id="H" class="" onmousedown="lyre('H'.charCodeAt(0))" onmouseup="mouseUp('H'.charCodeAt(0))">H</button>
+    <button id="J" class="" onmousedown="lyre('J'.charCodeAt(0))" onmouseup="mouseUp('J'.charCodeAt(0))">J</button> 
+    <br> <br>
+    <button id="Z" class="" onmousedown="lyre('Z'.charCodeAt(0))" onmouseup="mouseUp('Z'.charCodeAt(0))">Z</button>
+    <button id="X" class="" onmousedown="lyre('X'.charCodeAt(0))" onmouseup="mouseUp('X'.charCodeAt(0))">X</button>
+    <button id="C" class="" onmousedown="lyre('C'.charCodeAt(0))" onmouseup="mouseUp('C'.charCodeAt(0))">C</button>
+    <button id="V" class="" onmousedown="lyre('V'.charCodeAt(0))" onmouseup="mouseUp('V'.charCodeAt(0))">V</button>
+    <button id="B" class="" onmousedown="lyre('B'.charCodeAt(0))" onmouseup="mouseUp('B'.charCodeAt(0))">B</button>
+    <button id="N" class="" onmousedown="lyre('N'.charCodeAt(0))" onmouseup="mouseUp('N'.charCodeAt(0))">N</button>
+    <button id="M" class="" onmousedown="lyre('M'.charCodeAt(0))" onmouseup="mouseUp('M'.charCodeAt(0))">M</button>
+    </div>
+    <script type="text/javascript">
+        // let debug = document.getElementById("debug");
+        let btns = document.getElementsByTagName('button');
+        let keyDown = new Array(26);
+        for (let i=0; i < 26; i++) keyDown[i] = 0;
+
+        function lyre(x) {
+            let str = String.fromCharCode(x);
+            x -= 65;
+            if (!keyDown[x]) {
+                keyDown[x] = 1;
+                let audio = new Audio("../sounds/" + str + ".wav");
+                audio.display = "block";
+                audio.play();
+
+                audio.addEventListener("ended", function() {
+                    audio = null;
+                });
+
+                let btn;
+                for (let i=0; i < btns.length; i++) {
+                    if (btns[i].id == str) {
+                        btn = btns[i];
+                        break;
+                    }
+                }
+                btn.classList.add("active");
+                btn.click();
+            }
+            window.addEventListener("keyup", function(event) {
+                mouseUp(event.keyCode);
+            });
+
+        }
+
+        function mouseUp(x) {
+            let str = String.fromCharCode(x);
+            x -= 65;
+            let btn;
+            for (let i=0; i < btns.length; i++) {
+                if (btns[i].id == str) {
+                    btn = btns[i];
+                    break;
+                }
+            }
+            btn.classList.remove("active");
+            keyDown[x] = 0;
+        }
+
+        window.addEventListener("keydown", function(event){
+            lyre(event.keyCode);
+        });
+    </script>
     
 </body>
 </html>
