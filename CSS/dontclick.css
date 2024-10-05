@@ -32,7 +32,7 @@ button {
 	background-color: rgb(255, 255, 180);
 	height: 80px;
 	width: 80px;
-	border: 1px solid black;
+/*	border: 1px solid black;*/
 	margin-left: 13px;
 	border-radius: 100%;
 	text-align: center;
@@ -44,12 +44,14 @@ button {
 }
 
 #lyreContainer {
+	border: 1px solid red;
+	position: absolute;
 	width: 700px;
 	height: 300px;
-	top: 60%;
-	left: 50%;
-	margin: -150px 0 0 -350px;
-	position: absolute;
+	margin: auto;
+	margin-top: 100px;
+	position: relative;
+	text-align: center;
 	align-content: center;
-	overflow: auto;
+	overflow: visible;
 }
