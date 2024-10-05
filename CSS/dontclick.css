@@ -39,7 +39,14 @@ button {
 	font-size: 200%;
 }
 
+button:active {
+	transform: scale(0.9);
+	background-color: rgb(200, 200, 105);
+	
+}
+
 .active {
+	transform: scale(0.9);
 	background-color: rgb(200, 200, 105);
 }
 
